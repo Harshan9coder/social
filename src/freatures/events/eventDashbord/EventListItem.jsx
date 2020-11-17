@@ -2,8 +2,8 @@ import React from "react";
 import { Button, Icon, Item, List, Segment } from "semantic-ui-react";
 import EventListAddendee from "./EventListAddendee";
 
-function EventListItem({ event }) {
-  console.log(event);
+function EventListItem({ event,seclectEvent,deleteEvents }) {
+  
   return (
     <div>
       <Segment.Group>
@@ -39,7 +39,8 @@ function EventListItem({ event }) {
         </Segment>
         <Segment clearing>
           <span>Description of events</span>
-          <Button color="teal" floated="right" content="view" />
+          <Button onClick={()=>seclectEvent(event)} color="teal" floated="right" content="view" />
+          <Button onClick={()=>deleteEvents(event.id)} color="red" floated="right" content="Delete" />
         </Segment>
       </Segment.Group>
     </div>
